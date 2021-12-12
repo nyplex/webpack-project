@@ -1,10 +1,9 @@
 import config from './config'
-import $ from 'jquery'
 
-console.log(config);
 
-let a = 3
+document.getElementById("btn").addEventListener("click", () => {
+    import('jquery').then(($) => {
+        $('body').css('background-color', 'red')
+    })
+})
 
-debugger
-
-$('body').css('background-color', '#fff')

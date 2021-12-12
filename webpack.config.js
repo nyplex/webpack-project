@@ -7,7 +7,8 @@ let config = {
     entry: './assets/js/app.js',
     output: {
         path: path.resolve('./dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/dist/'
     },
     watch: dev,
     devtool: dev ? "cheap-module-eval-source-map" : "source-map",
@@ -20,7 +21,7 @@ let config = {
                 loader: 'babel-loader',
                 options: {
                   presets: [
-                    ['@babel/preset-env', { "targets": {
+                    ['@babel/preset-env', {"modules": false, "targets": {
                         "browsers": ["Last 2 versions", "safari >= 7", "ie >= 7"]
                     }}]
                   ]
@@ -29,9 +30,7 @@ let config = {
             }
         ]
     },
-    plugins: [
-        
-    ]
+    plugins: [],
     
 }
 
